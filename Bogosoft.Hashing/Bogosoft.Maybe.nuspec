@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <authors>$author$</authors>
+    <id>$id$</id>
+    <copyright>Copyright 2017</copyright>
+    <description>$description$</description>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/bogosoft/Hashing</projectUrl>
+    <tags>maybe option null</tags>
+    <title>$title$</title>
+    <version>$version$</version>
+  </metadata>
+</package>
