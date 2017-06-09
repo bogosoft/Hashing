@@ -1,8 +1,9 @@
-version: 1.0.0.{build}
+version: 1.1.0.{build}
 pull_requests:
   do_not_increment_build_number: true
 branches:
   only:
+  - develop
   - master
 assembly_info:
   patch: true
@@ -32,11 +33,10 @@ deploy:
   symbol_server: https://www.myget.org/F/bogolib/symbols/api/v2/package
   artifact: /.*\.nupkg/
   on:
-    branch: master
+    branch: develop
 - provider: NuGet
   name: ga
   api_key:
     secure: kahJkX8Cwh0dlGgcncf3lzSyXEO8kxwl1/rG/YizWVSkhlHNn1rXhsKGyZEcph3Q
   on:
     branch: master
-    appveyor_repo_tag: true
