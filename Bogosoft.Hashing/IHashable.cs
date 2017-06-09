@@ -11,6 +11,6 @@
         /// <returns>
         /// A variable length sequence of bytes unique to the state of the current object.
         /// </returns>
-        byte[] GetBytes();
+        byte[] GetHashBytes();
     }
 }
