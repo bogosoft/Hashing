@@ -43,12 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ByteArrayExtensions.cs" />
+    <Compile Include="HashExtensions.cs" />
     <Compile Include="IHashable.cs" />
     <Compile Include="IHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Bogosoft.Hashing.nuspec" />
+    <None Include="Bogosoft.Hashing.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
