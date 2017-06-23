@@ -9,7 +9,7 @@ namespace Bogosoft.Hashing
     public static class HashExtensions
     {
         /// <summary>
-        /// Generate a fixed-length sequence of bytes against a hashable object.
+        /// Generate a fixed-length sequence of bytes against a collection of strings.
         /// </summary>
         /// <param name="algorithm">The current <see cref="IHash"/> implementation.</param>
         /// <param name="strings">A sequence of strings to hash.</param>
@@ -48,7 +48,7 @@ namespace Bogosoft.Hashing
         }
 
         /// <summary>
-        /// Generate a fixed-length sequence of bytes against a hashable object.
+        /// Generate a fixed-length sequence of bytes against a string.
         /// </summary>
         /// <param name="algorithm">The current <see cref="IHash"/> implementation.</param>
         /// <param name="data">A string to hash.</param>
@@ -65,7 +65,7 @@ namespace Bogosoft.Hashing
         }
 
         /// <summary>
-        /// Generate a fixed-length sequence of bytes against a hashable object.
+        /// Generate a fixed-length sequence of bytes against a string builder.
         /// </summary>
         /// <param name="algorithm">The current <see cref="IHash"/> implementation.</param>
         /// <param name="builder">A string builder whose contents will be hashed.</param>
