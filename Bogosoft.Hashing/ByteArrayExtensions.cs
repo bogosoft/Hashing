@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Bogosoft.Hashing
 {
@@ -7,6 +8,42 @@ namespace Bogosoft.Hashing
     /// </summary>
     public static class ByteArrayExtensions
     {
+        /// <summary>
+        /// Convert the first sixteen (16) bytes from the given array of bytes to a GUID. If the given array
+        /// of bytes contains less than sixteen (16) bytes, the remainder of the GUID will be padded
+        /// with 0's.
+        /// </summary>
+        /// <param name="bytes">The current array of bytes.</param>
+        /// <returns>A GUID.</returns>
+        public static Guid ToGuid(this byte[] bytes)
+        {
+            return bytes.ToGuid(0);
+        }
+
+        /// <summary>
+        /// Convert the current array of bytes to a GUID. The bytes that will be used for the GUID will be
+        /// read from the given array of bytes starting at the given index. If sixteen (16) bytes cannot be
+        /// read from the given index of the array of bytes, the remainder will be padded with 0's.
+        /// </summary>
+        /// <param name="bytes">The current array of bytes.</param>
+        /// <param name="start">
+        /// A value corresponding to the index of the given array of bytes to begin reading from.
+        /// </param>
+        /// <returns>A GUID.</returns>
+        public static Guid ToGuid(this byte[] bytes, int start)
+        {
+            var length = bytes.Length - start >= 16 ? 16 : bytes.Length - start;
+
+            var scoped = new byte[16];
+
+            for(var i = 0; i < length; i++)
+            {
+                scoped[i] = bytes[i + start];
+            }
+
+            return new Guid(scoped);
+        }
+
         /// <summary>
         /// Convert the current array of bytes to a hex-encoded string.
         /// </summary>
