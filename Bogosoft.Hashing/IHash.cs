@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Indicates that an implementation is capable of generating a fixed-length
-    /// sequence of bytes given an object of <see cref="IHashable"/>.
+    /// sequence of bytes given a variable-length sequence of bytes.
     /// </summary>
     public interface IHash
     {
@@ -13,12 +13,12 @@
         int HashLength { get; }
 
         /// <summary>
-        /// Generate a fixed-length sequence of bytes against a given <see cref="IHashable"/> object.
+        /// Generate a fixed-length sequence of bytes against a variable-length sequence of bytes.
         /// </summary>
-        /// <param name="object">An object to hash.</param>
+        /// <param name="bytes">A variable-length sequence of bytes.</param>
         /// <returns>
         /// A fixed-length sequence of bytes.
         /// </returns>
-        byte[] Compute(IHashable @object);
+        byte[] Compute(byte[] bytes);
     }
 }
